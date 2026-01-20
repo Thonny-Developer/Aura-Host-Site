@@ -1,0 +1,102 @@
+/* Базовые настройки темы */
+body {
+    background-color: #0a0a0f;
+    color: white;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+::selection {
+    background-color: #f43f5e;
+    color: white;
+}
+
+/* Стеклянная подложка */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Скрытие скроллбара */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Карточки возможностей */
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(244, 63, 94, 0.1), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover {
+    border-color: rgba(244, 63, 94, 0.3);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* Маскирование боков */
+.pricing-wrapper {
+    position: relative;
+    margin: 0 -64px;
+    padding: 0 64px;
+}
+
+#pricing-container {
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+#pricing-container > div {
+    scroll-snap-align: center;
+}
+
+/* Анимации для карточек тарифов */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+}
+
+[data-tariff] {
+    animation: slideInRight 0.25s ease-out;
+}
+
+[data-tariff].exit {
+    animation: slideOutLeft 0.25s ease-out forwards;
+}
