@@ -1,4 +1,4 @@
-<img width="1915" height="957" alt="image" src="https://github.com/user-attachments/assets/555cf54f-b219-4b73-806c-3b9fc129af74" />
+<img width="1881" height="931" alt="image" src="https://github.com/user-attachments/assets/a0a15276-2f71-4784-a883-3125b4b8ae4e" />
 
 # AuraHost - Premium Web Hosting Platform
 
@@ -22,4 +22,5 @@ AuraHost is a modern, high-performance web hosting platform designed for develop
 - **Multi-Stack Support** - JavaScript, Python, PHP, and more
 - **24/7 Support** - Round-the-clock customer assistance
 - Easy deployment in seconds
+
 
